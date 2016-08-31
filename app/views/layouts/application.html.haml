@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %title Some
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %nav
+    %ul
+      %li
+        %a{:href => "#"} Домашняя страница
+      %li
+        %a{:href => "#"} Расписание
+      // Проверка на админа
+      %li
+        %a{:href => "#"} Администрирование
+      %li
+        %a{:href => "#"} Контакты
+    %ul
+      %li
+        %a{:href => "#"} Вход
+      %li
+        %a{:href => "#"} Регистрация
+  %body
+  %link{:href => "http://fonts.googleapis.com/css?family=Arimo:400,700|Inconsolata", :rel => "stylesheet", :type => "text/css"}/
+
+  = yield
