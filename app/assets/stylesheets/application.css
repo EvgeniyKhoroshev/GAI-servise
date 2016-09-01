@@ -3,20 +3,23 @@ body {
   background: #white;
   font-family: 'Inconsolata';
   color: #424242;
-  text-align: center;
 }
 .main_body{
+  background-color: #FAFAFA;
+  margin: auto;
+  width: 75%;
+  min-height: 400px;
   margin-top: 15px;
   padding: 3px;
-  border-left :1px solid #EEEEEE;
-  border-right: 1px solid #EEEEEE;
+  border-left :1px solid #424242;
+  border-right: 1px solid #424242;
 }
 nav {
   display: block;
-  border-bottom: 1px solid;
   margin: 0px auto 0;
 }
 ul {
+  border-bottom: 1px solid;
   list-style: none;
   margin: 0;
   padding-left: 0;
