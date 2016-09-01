@@ -1,0 +1,11 @@
+%body
+  %a{:href => "new_post"} Создать запрос
+  .main_body
+    -if @posts == []
+      %p Пока не оставлено ни одного запроса.
+    -else
+      -@posts.each do |post|
+        %div.comments
+          %h3=post.author + "  "
+          =post.body.to_s
+          %hr
