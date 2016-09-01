@@ -1,0 +1,16 @@
+%body
+  =form_for :post, url: posts_path do |f|
+    %p.simple_form_css
+      =f.label :title, "Введите ваше имя"
+      %br
+      =f.text_field :author, {:autofocus => "", :placeholder => "Иван Иванов", :required => ""}
+      %br
+      =f.label :title, "E-mail"
+      %br
+      =f.text_field :title, {:pattern => "\\S+@[a-z]+.[a-z]+", :placeholder => "sample@e_mail.com", :required => ""}
+      %br
+      =f.label :title, "Запрос о расписании"
+      %br
+      =f.text_area :body, :label => 'Text of post', class: 'textarea', id: 'post_body_input', :autofocus => "", :placeholder => "Текст запроса", :required => ""
+      %br
+      =f.button :"Отправить запрос", class: 'form-button'
