@@ -1,7 +1,5 @@
 class PddController < ApplicationController
-
   def show
-
 end
 def pdf
   pdf_filename = File.join(Rails.root, "2.pdf")
