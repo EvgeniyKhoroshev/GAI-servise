@@ -6,6 +6,7 @@
     -else
       -@posts.each do |post|
         %div.comments
-          %h3=post.author + "  "
+          %h3=post.author + " " + post.created_at.strftime("%B, %d, %Y")
+          %br
           =post.body.to_s
           %hr
