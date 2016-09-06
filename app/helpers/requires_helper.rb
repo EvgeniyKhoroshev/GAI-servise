@@ -1,0 +1,2 @@
+module RequiresHelper
+end

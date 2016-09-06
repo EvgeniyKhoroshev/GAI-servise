@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %title Госавтоинспекция РФ
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %nav
+    %ul
+      %li
+        %a{:href => "home_path"} Домашняя страница
+      %li
+        %a{:href => "all_posts"} Расписание
+      // Проверка на админа
+      %li
+        %a{:url => "#"} Администрирование
+      %li
+        %a{:href => "show_pdd", :target => "_blank"} ПДД
+      %li
+        %a{:href => "#"} Контакты
+    %ul
+      %li
+        %a{:href => "#"} Вход
+      %li
+        %a{:href => "#"} Регистрация
+      %li
+        %a{:href => "#"} Выход
+  %body
+    %footer
+      .main_footer
+        © Информационный сервис ГИБДД РФ 2016.
+  %link{:href => "http://fonts.googleapis.com/css?family=Arimo:400,700|Inconsolata", :rel => "stylesheet", :type => "text/css"}/
+
+  = yield
