@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get 'home_path' => 'application#index'
     get 'all_posts' => 'posts#show'
     get 'show_pdd' => 'pdd#pdf'
+    get 'edit_post_path' => 'posts#edit'
   devise_scope :user do
     get 'new_user_session' => 'devise/sessions#new'
     get 'destroy_user_session' => 'devise/sessions#destroy'
