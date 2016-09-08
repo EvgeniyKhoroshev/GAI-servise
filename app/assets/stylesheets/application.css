@@ -6,7 +6,8 @@ body {
   text-align: center;
 }
 .image{
-  margin-left: 0px;
+  width: 500px;
+  position:inherit;
 }
 
 .main_body{
@@ -20,6 +21,7 @@ body {
   border-left :1px solid #424242;
   border-right: 1px solid #424242;
   margin-bottom: 55px;
+  text-align: left;
 }
 .main_footer {
   text-align: center;
