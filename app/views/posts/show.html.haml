@@ -1,5 +1,4 @@
 %body
-  %a{:href => "new_post"} Создать запрос
   .main_body
     -if @posts == []
       %p Пока не оставлено ни одного запроса.
@@ -10,3 +9,12 @@
           %br
           =post.body.to_s
           %hr
+          %br
+          %p=post.approoved
+          %hr
+        -if user_signed_in?
+          %a{:href => edit_post_path(post)} Обработать запрос
+        -else
+          %br
+          %hr
+          =post.approoved.to_s
