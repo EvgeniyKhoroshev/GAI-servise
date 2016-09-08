@@ -10,7 +10,10 @@
       %li
         %a{:href => "home_path"} Домашняя страница
       %li
-        %a{:href => "new_user_session"} Администрирование
+        -if user_signed_in?
+          %a{:href => "all_posts"} Администрирование
+        -else
+          %a{:href => "new_user_session"} Администрирование
       %li
         %a{:href => "show_pdd", :target => "_blank"} ПДД
       %li
