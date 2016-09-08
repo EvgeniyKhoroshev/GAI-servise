@@ -10,15 +10,19 @@
       %li
         %a{:href => "home_path"} Домашняя страница
       %li
-        %a{:url => "#"} Администрирование
+        %a{:href => "new_user_session"} Администрирование
       %li
         %a{:href => "show_pdd", :target => "_blank"} ПДД
       %li
         %a{:href => "#"} Контакты
+      %li
+        %a{:href => "destroy_user_session"} Выйти
     %ul
       %li
         %a{:href => "new_post"} Создать запрос на расписание
   %body
+    %p.notice= notice
+    %p.alert= alert
     %footer
       .main_footer
         © Информационный сервис ГИБДД РФ 2016.
