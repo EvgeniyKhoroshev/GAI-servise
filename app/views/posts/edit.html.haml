@@ -5,6 +5,10 @@
       %br
       =f.text_area :body, class: 'textarea'
       %br
-      =f.text_field :approoved, class: 'textfield'
+      =f.radio_button :approoved, 'Запрос принят.', :value => 'Принять'
+      =f.label :title, "Принять"
+      %br
+      =f.radio_button :approoved, 'Запрос отклонен.', :value => 'Отклонить'
+      =f.label :title, 'Отклонить'
       %br
       =f.submit "Обработать запрос", class: 'form-button'
