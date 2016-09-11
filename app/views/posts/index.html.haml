@@ -1,0 +1,20 @@
+%body
+  .main_body
+    -if @posts == []
+      %p Пока не оставлено ни одного запроса.
+    -else
+      -@posts.each do |post|
+        %div.comments
+          %h3=post.author + " " + post.created_at.strftime("%B, %d, %Y")
+          %br
+          =post.body.to_s
+          %hr
+          %br
+          %p=post.approoved
+          %hr
+        -if user_signed_in?
+          %a{:href => edit_post_path(post)} Обработать запрос
+        -else
+          %br
+          %hr
+          =post.approoved.to_s

@@ -1,0 +1,10 @@
+%body
+  =form_for :post, :method => :put do |f|
+    %p.simple_form_css
+      =@post.author + " " + @post.created_at.strftime("%B, %d, %Y")
+      %br
+      =f.text_area :body, class: 'textarea'
+      %br
+      =f.text_field :approoved, class: 'textfield'
+      %br
+      =f.submit "Обработать запрос", class: 'form-button'

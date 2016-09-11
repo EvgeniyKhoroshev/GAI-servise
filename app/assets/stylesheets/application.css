@@ -14,14 +14,13 @@ body {
   background-color: #E8EAF6;
   margin: auto;
   width: 75%;
-  min-height: 400px;
   margin-top: 15px;
   padding: 25px;
-  padding-top: 5px;
   border-left :1px solid #424242;
   border-right: 1px solid #424242;
   margin-bottom: 55px;
   text-align: left;
+  min-height: 100%;
 }
 .main_footer {
   text-align: center;
@@ -172,6 +171,11 @@ label.collection_check_boxes {
      height:300px;
      width: 100%;
      }
+     .textfield{
+       width: 100%;
+
+     }
+
   .form-field:focus {
     background: #fff;
     color: #000000;

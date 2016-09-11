@@ -8,21 +8,22 @@
   %nav
     %ul
       %li
-        %a{:href => "home_path"} Домашняя страница
+        %a{:href => "/home_path"} Домашняя страница
       %li
         -if user_signed_in?
-          %a{:href => "all_posts"} Администрирование
+          %a{:href => "/post_path"} Обработка запросов
         -else
-          %a{:href => "new_user_session"} Администрирование
+          %a{:href => "/new_user_session"} Адвинистратору
       %li
-        %a{:href => "show_pdd", :target => "_blank"} ПДД
+        %a{:href => "/show_pdd_path", :target => "_blank"} ПДД
       %li
-        %a{:href => "#"} Контакты
+        %a{:href => "/contact_path"} Контакты
       %li
-        %a{:href => "destroy_user_session"} Выйти
-    %ul
-      %li
-        %a{:href => "new_post"} Создать запрос на расписание
+        %a{:href => "/destroy_user_session"} Выйти
+    -if !user_signed_in?
+      %ul
+        %li
+          %a{:href => "/new_post_path"} Создать запрос на расписание
   %body
     %p.notice= notice
     %p.alert= alert
