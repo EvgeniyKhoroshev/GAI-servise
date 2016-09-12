@@ -6,10 +6,15 @@ body {
   text-align: center;
 }
 .image{
-  width: 500px;
+  width: 300px;
   position:inherit;
 }
-
+.approoved_post{
+  color: green;
+}
+.not_approoved_post{
+  color:red;
+}
 .main_body{
   background-color: #E8EAF6;
   margin: auto;

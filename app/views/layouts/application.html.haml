@@ -10,20 +10,24 @@
       %li
         %a{:href => "/home_path"} Домашняя страница
       %li
-        -if user_signed_in?
-          %a{:href => "/post_path"} Обработка запросов
-        -else
-          %a{:href => "/new_user_session"} Адвинистратору
+        %a{:href => "/post_path"} Показать все запросы
       %li
         %a{:href => "/show_pdd_path", :target => "_blank"} ПДД
       %li
         %a{:href => "/contact_path"} Контакты
       %li
-        %a{:href => "/destroy_user_session"} Выйти
+        -if user_signed_in?
+          %a{:href => "/destroy_user_session"} Выйти
+        -else
+          %a{:href => "/new_user_session"} Войти
     -if !user_signed_in?
       %ul
         %li
           %a{:href => "/new_post_path"} Создать запрос на расписание
+    -else
+      %ul
+        %li
+          %a{:href => "/approoved_posts"} Принятое расписание
   %body
     %p.notice= notice
     %p.alert= alert

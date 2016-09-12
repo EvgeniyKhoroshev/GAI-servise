@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   put '/posts/:id/edit' => 'posts#update'
   get '/show_pdd_path' => 'pdd#pdf'
   get '/home_path' => 'application#index'
-  get 'contact_path' => 'application#contact'
+  get '/contact_path' => 'application#contact'
+  get '/approoved_posts' => 'posts#approoved_posts'
 
   devise_for :users
   devise_scope :user do
