@@ -7,6 +7,9 @@ class PostsController < ApplicationController
   end
   def new
   end
+  def approoved_posts
+    @posts = Post.all
+  end
   def create
     @post = Post.new(post_params)
     @post.approoved = "Этот запрос пока не обработан администратором."
