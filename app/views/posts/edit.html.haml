@@ -1,13 +1,12 @@
 %body
   =form_for :post, :method => :put do |f|
     %p.simple_form_css
-      =@post.author + " " + @post.created_at.strftime("%B, %d, %Y")
+      =@post.author + " | "+@post.created_at.strftime("%B, %d, %Y")
       %br
       =f.text_area :body, class: 'textarea'
       %br
       =f.radio_button :approoved, 'Запрос принят.', :value => 'Принять'
-      =f.label :title, "Принять"
-      %br
+      =f.label :title, "Принять"+ "   "
       =f.radio_button :approoved, 'Запрос отклонен.', :value => 'Отклонить'
       =f.label :title, 'Отклонить'
       %br

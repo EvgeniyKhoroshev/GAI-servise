@@ -5,7 +5,8 @@
     -else
       -@posts.each do |post|
         %div.comments
-          %h3=post.author + " " + post.created_at.strftime("%B, %d, %Y")
+          %h3=post.author + " "
+          %p.time=post.created_at.strftime("%B, %d, %Y")
           %br
           -if post.approoved == 'Запрос принят.'
             %p.approoved_post=post.body.to_s
@@ -17,12 +18,20 @@
           %hr
         -if user_signed_in?
           -if post.approoved == "Этот запрос пока не обработан администратором."
-            %a{:href => edit_post_path(post)} Обработать запрос
+            %p=post.approoved.to_s
+            %a.in_body{:href => edit_post_path(post)} Обработать запрос
           -else
             -if post.approoved == 'Запрос принят.'
               %p.approoved_post=post.approoved.to_s
             -else
-              %p.not_approoved_post=post.approoved.to_s
+              -if post.approoved == 'Запрос отклонен.'
+                %p.not_approoved_post=post.approoved.to_s
         -else
-          =post.approoved.to_s
-          %hr
+          -if post.approoved == 'Запрос принят.'
+            %p.approoved_post=post.approoved.to_s
+          -else
+            -if post.approoved == 'Запрос отклонен.'
+              %p.not_approoved_post=post.approoved.to_s
+            -else
+              %p=post.approoved.to_s
+        %hr
