@@ -25,8 +25,7 @@ body {
   width: 50%;
   margin-top: 0px;
   padding: 25px;
-  border-left :1px solid #424242;
-  border-right: 1px solid #424242;
+  border :1px solid #424242;
   margin-bottom: 55px;
   text-align: left;
   min-height: 100%;

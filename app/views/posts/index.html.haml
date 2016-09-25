@@ -1,10 +1,10 @@
 %body
-  .main_body
-    -if @posts == []
-      %p Пока не оставлено ни одного запроса.
-    -else
-      -@posts.each do |post|
-        %div.comments
+  -if @posts == []
+    %p Пока не оставлено ни одного запроса.
+  -else
+    -@posts.each do |post|
+      %div.comments
+        .main_body
           %h3=post.author + " "
           %p.time=post.created_at.strftime("%B, %d, %Y")
           %br
@@ -16,22 +16,22 @@
             -else
               %p=post.body.to_s
           %hr
-        -if user_signed_in?
-          -if post.approoved == "Этот запрос пока не обработан администратором."
-            %p=post.approoved.to_s
-            %a.in_body{:href => edit_post_path(post)} Обработать запрос
+          -if user_signed_in?
+            -if post.approoved == "Этот запрос пока не обработан администратором."
+              %p=post.approoved.to_s
+              %a.in_body{:href => edit_post_path(post)} Обработать запрос
+            -else
+              -if post.approoved == 'Запрос принят.'
+                %p.approoved_post=post.approoved.to_s
+              -else
+                -if post.approoved == 'Запрос отклонен.'
+                  %p.not_approoved_post=post.approoved.to_s
           -else
             -if post.approoved == 'Запрос принят.'
               %p.approoved_post=post.approoved.to_s
             -else
               -if post.approoved == 'Запрос отклонен.'
                 %p.not_approoved_post=post.approoved.to_s
-        -else
-          -if post.approoved == 'Запрос принят.'
-            %p.approoved_post=post.approoved.to_s
-          -else
-            -if post.approoved == 'Запрос отклонен.'
-              %p.not_approoved_post=post.approoved.to_s
-            -else
-              %p=post.approoved.to_s
-        %hr
+              -else
+                %p=post.approoved.to_s
+          %hr
